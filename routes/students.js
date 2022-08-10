@@ -13,11 +13,11 @@ app.post('/students', (req, res) => {
     const student = {
       name: name,
     }
-    const test = students.find(student=>{
+    const studentExiste = students.find(student=>{
      return student.name === name
     } )
 
-    if (!test){
+    if (!studentExiste){
       students.push(student)
       res.status(201).json(student)
     }else{
