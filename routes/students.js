@@ -19,7 +19,7 @@ app.post('/students', (req, res) => {
 
     if (!test){
       students.push(student)
-      res.json(student)
+      res.status(201).json(student)
     }else{
       res.status(409).send("student already exists")
     }
