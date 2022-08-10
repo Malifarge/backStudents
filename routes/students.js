@@ -7,11 +7,14 @@ app.get('/students',(req,res)=>{
 })
 
 app.post('/students', (req, res) => {
+
+    const {name} = req.body
+
     const student = {
-      name: req.body.name,
+      name: name,
     }
-    const test = students.find(studentbase=>{
-     return studentbase.name === student.name
+    const test = students.find(student=>{
+     return student.name === name
     } )
 
     if (!test){
