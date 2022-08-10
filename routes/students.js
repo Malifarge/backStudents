@@ -6,6 +6,18 @@ app.get('/students',(req,res)=>{
     res.json(students)
 })
 
+app.get('/students/:name',(req,res)=>{
+  const {name} = req.params
+  const studentExiste = students.find(student=>{
+    return student.name === name
+   } )
+   if (studentExiste){
+    res.json(studentExiste)
+  }else{
+    res.status(404).send("Not Found")
+  }
+})
+
 app.post('/students', (req, res) => {
 
     const {name} = req.body
