@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const students= require('./students.json')
+const students= []
 
 app.get('/students',(req,res)=>{
     res.json(students)
