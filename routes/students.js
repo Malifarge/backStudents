@@ -14,8 +14,6 @@ app.post('/students', (req, res) => {
      return studentbase.name === student.name
     } )
 
-    console.log(test);
-
     if (!test){
       students.push(student)
       res.json(student)
